@@ -39,8 +39,8 @@ def getAtivo():
         three = str(json.dumps(A[1]))
         six = str(json.dumps(A[2]))
         twelve = str(json.dumps(A[3]))
-        print(name, one, three, six, twelve)
-        # insertAtivo(name, one, three, six, twelve)
+        # print(name, one, three, six, twelve)
+        insertAtivo(name, one, three, six, twelve)
 
 getAtivo()
 
