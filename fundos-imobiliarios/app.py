@@ -35,12 +35,12 @@ def getAtivo():
         A = [row.text.strip() for row in data.findAll("td")][1:]
         compare[ativo]  = [A[0], A[1], A[2], A[3]]
         name = ativo
-        one = str(A[0])
-        three = str(A[1])
-        six = str(A[2])
-        twelve = str(A[3])
-        # print(name, one, three, six, twelve)
-        insertAtivo(name, one, three, six, twelve)
+        one = str(json.dumps(A[0]))
+        three = str(json.dumps(A[1]))
+        six = str(json.dumps(A[2]))
+        twelve = str(json.dumps(A[3]))
+        print(name, one, three, six, twelve)
+        # insertAtivo(name, one, three, six, twelve)
 
 getAtivo()
 
