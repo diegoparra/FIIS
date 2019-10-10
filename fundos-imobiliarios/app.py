@@ -32,18 +32,25 @@ def getAtivo():
         r = requests.get(url.format(ativo))           
         soup = BeautifulSoup(r.text, "html.parser") 
         data = soup.find('td', text="Em relação ao valor de cota atual").parent
+
         A = [row.text.strip() for row in data.findAll("td")][1:]
+
         compare[ativo]  = [A[0], A[1], A[2], A[3]]
+        
         name = ativo
-        one = json.dumps(A[0])
-        three = json.dumps(A[1])
-        six = json.dumps(A[2])
-        twelve = json.dumps(A[3])
+        one = A[0]
+        three = A[1]
+        six = A[2]
+        twelve = A[3]
         insertAtivo(name, one, three, six, twelve)
 
 getAtivo()
 
-compare = selectAll()
+compare = {}
+for ativo in selectAll():
+    compare[ativo[0]]  = [ativo[1], ativo[2], ativo[3], ativo[4]]
+
+print(compare)
 
 
 app = Flask(__name__)
