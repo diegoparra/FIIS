@@ -1,0 +1,32 @@
+{% extends "template.html" %}
+<!--criamos um bloco de conteúdo a ser interpretado pelo python-->
+{% block conteudo %}
+    <table class="table table-striped table-responsive table-bordered">
+        <thead>
+            <tr>
+                <th>Ativo</th>
+                <th>1 mes</th>
+                <th>3 meses</th>
+                <th>6 meses</th>
+                <th>12 meses</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--criamos uma estrutura de repetição com o Jinja2 para preencher nossa tabela com os dados dos ativos-->
+            {% for ativo in compare  %}
+            
+                        <tr>
+                            <td>{{ ativo }}</td>
+                            <td>{{ compare[ativo][0] }}</td>
+                            <td>{{ compare[ativo][1] }}</td>
+                            <td>{{ compare[ativo][2] }}</td>
+                            <td>{{ compare[ativo][3] }}</td>
+
+                            <!--acessamos os atributos nome, espécie e tipo de cada ativo-->
+                        </tr>
+        {% endfor %}
+        <!--encerramos a estrutura de repetição-->
+        </tbody>
+    </table>
+{% endblock %}
+<!--encerramos o bloco de código a ser interpretado pelo python-->
