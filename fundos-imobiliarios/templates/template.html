@@ -8,6 +8,32 @@
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}"> --> 
   </head>
   <body>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+          <!-- <a class="navbar-brand" href="#">Menu</a> -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/ativos">Listar Ativos</a>
+                  </li>
+                  
+                  <li class="nav-item">
+                      <a class="nav-link" href="/cadastro">Cadastrar Ativo</a>
+                  </li>
+      
+                  <li class="nav-item">
+                      <a class="nav-link" href="/remover-ativo">Remover Ativo</a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
     <div class="container">
         <!--cria container onde as mensagens serão exibidas-->
         {% with messages = get_flashed_messages() %}
@@ -21,15 +47,11 @@
                 </ul>
             {% endif %}
         {% endwith %}
-                <!--fim dos laços-->
-        <div class="page-header">
-            <h1>{{ titulo }}</h1>
-        </div>
+
         {% block conteudo %}{% endblock %}
     </div>
-    <!-- <a class="btn btn-primary" href="/login" role="button">Login </a>
-    <a class="btn btn-primary" href="/novo" role="button">Novo </a>
-    <a class="btn btn-primary" href="/logout" role="button">Logout </a> -->
+
+    
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>

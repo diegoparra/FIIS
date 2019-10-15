@@ -1,0 +1,16 @@
+{% extends "template.html" %}
+<!--criamos um bloco de conteúdo a ser interpretado pelo python-->
+{% block conteudo %}
+
+<form action="{{ url_for('removeAtivoDb') }}" method="POST">
+    <fieldset>
+      <div class="form-group">
+        <label for="ativo">Ativo</label>
+        <input type="text" id="ativo" name="ativo" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary btn-salvar">Registrar ativo no DB</button>
+    </fieldset>
+</form>
+
+{% endblock %}
+<!--encerramos o bloco de código a ser interpretado pelo python-->
